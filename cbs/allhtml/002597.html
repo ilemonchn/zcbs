@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b261ae1834","applicationID":"261293006","transactionName":"dFZcQRFaCFtQREpbCVpJU1sKUBcYRl4KTw==","queueTime":0,"applicationTime":555,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"b261ae1834",applicationID:"261293006"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1194.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta content="webkit" name="renderer"/>
+    <meta content="on" http-equiv="cleartype"/>
+    <meta content="True" name="HandheldFriendly"/>
+    <meta content="320" name="MobileOptimized"/>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    
+<title>金禾实业(002597)财务分析 | 财报说-AI巴菲特，科学投资神器</title>
+<meta name="description" content="提供金禾实业(002597)的财务分析,行情数据, 汇总金禾实业基本资料及重大新闻、研究报告及行业资讯，解读海底捞;金禾实业2019年报、2018年报、2017年报、2016年报,金禾实业2019一季报,季报;金禾实业资产负债表、利润表、现金流量表;金禾实业研究报告,财务分析,ROE分析,金禾实业杜邦分析,五线谱趋势,股价走势,股价评估,行业排名,行业资讯,综合分析等与金禾实业(002597)相关的信息服务。" />
+<meta name="keywords" content="金禾实业,财报,年报,季报,杜邦分析法,数据,财务分析,现金流量表,资产负债表,利润表" />
+<link rel="image_src" href="https://caibaoshuo.com/images/og.png" />
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta content="index,follow" name="robots"/>
+<meta content="index,follow" name="google"/>
+<meta content="index,follow" name="googlebot"/>
+<meta content="index,follow" name="baidu"/>
+<meta content="index,follow" name="baidubot"/>
+<meta content="index,follow" name="verify"/>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="CGmwezt+v8V4RykDutZGJ46XJBZNsEk++WaIfBTdzJZ6JqhAxaOv8eNoBV4bdTfyUYNH995OPOA+2/EMSskzDg==" />
+    <meta name="action-cable-url" content="/cable" />
+    <link href="https://caibaoshuo.com/companies/002597" rel="canonical" />    <script src="https://assets.caibaoshuo.com/echarts-3.0.min.js" data-turbolinks-track="reload"></script>
+    <script src="https://assets.caibaoshuo.com/datafeeds/udf/dist/bundle.js" data-turbolinks-track="reload"></script>
+    <script src="https://assets.caibaoshuo.com/datafeeds/udf/dist/polyfills.js" data-turbolinks-track="reload"></script>
+    <script src="https://assets.caibaoshuo.com/charting_library/charting_library.min.js" data-turbolinks-track="reload"></script>
+    <script src="https://assets.caibaoshuo.com/assets/application-f1d7aa4df0a5937d0b0bf75606508d5de4c050d965c86d7fddf6af5c9799b35d.js" data-turbolinks-track="reload"></script>
+    <link rel="stylesheet" media="all" href="https://assets.caibaoshuo.com/assets/application-1c3d57b6d13c6c336e06bc6ad9ce5c105ef098ff5f919a3b7ae1b53d90014a0d.css" data-turbolinks-track="reload" />
+    <link rel="stylesheet" media="all" href="https://assets.caibaoshuo.com/assets/application-require-8f1c30b321addb55bc17e8fdbfdeafa12bd99d57e6b863acc6f81679cd78a724.css" data-turbolinks-track="reload" />
+    
+      
+      
+    <script>(function(w,d,s){w._uptime_rum={};w._uptime_rum.uuid='73RD-B993BD2182A0CBC9';w._uptime_rum.url='https://rum.uptime.com/rum/record-data';s=document.createElement('script');s.async=1;s.src='https://uptime.com/static/rum/compiled/rum.js';d.getElementsByTagName('head')[0].appendChild(s);})(window,document);</script>
+
+    <script>
+  (function() {
+    window.zhuge = window.zhuge || [];
+    window.zhuge.methods = "_init identify track getDid getSid getKey setSuperProperty setUserProperties setWxProperties setPlatform".split(" ");
+    window.zhuge.factory = function(b) {
+        return function() {
+            var a = Array.prototype.slice.call(arguments);
+            a.unshift(b);
+            window.zhuge.push(a);
+            return window.zhuge;
+        }
+    };
+    for (var i = 0; i < window.zhuge.methods.length; i++) {
+        var key = window.zhuge.methods[i];
+        window.zhuge[key] = window.zhuge.factory(key);
+    }
+    window.zhuge.load = function(b, x) {
+        if (!document.getElementById("zhuge-js")) {
+            var a = document.createElement("script");
+            var verDate = new Date();
+            var verStr = verDate.getFullYear().toString() + verDate.getMonth().toString() + verDate.getDate().toString();
+
+            a.type = "text/javascript";
+            a.id = "zhuge-js";
+            a.async = !0;
+            a.src = 'https://zgsdk.zhugeio.com/zhuge.min.js?v=' + verStr;
+            a.onerror = function() {
+                window.zhuge.identify = window.zhuge.track = function(ename, props, callback) {
+                     if(callback && Object.prototype.toString.call(callback) === '[object Function]') {
+                callback();
+                            } else if (Object.prototype.toString.call(props) === '[object Function]') {
+                props();
+                        }
+                };
+            };
+            var c = document.getElementsByTagName("script")[0];
+            c.parentNode.insertBefore(a, c);
+            window.zhuge._init(b, x)
+        }
+    };
+    window.zhuge.load('43b1db73698f4c599b8b6e49113430db', {
+      debug: false, // 实时调试开关，记得release 关闭
+      adTrack: false, // 广告监测开关,默认为false
+      zgsee: true, // 视屏采集开关, 默认为false
+      autoTrack: true,// 启用全埋点采集（选填，默认false)
+      singlePage: false // 是否是单页面应用（SPA），启用autoTrack后生效（选填，默认false)
+    });
+  })();
+</script>
+
+    <meta id="zhugeioMetadata" data-page-title="金禾实业(002597)财务分析" data-zhugeio-event="进入公司详情页" data-zhugeio-prop="{&quot;公司名称&quot;:&quot;金禾实业&quot;,&quot;股票代码&quot;:&quot;002597&quot;,&quot;股市分类&quot;:&quot;A股&quot;}"/>
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://assets.caibaoshuo.com/assets/favicon-237377464c34e948e9098ae67b990bf7d003ca546209442fc302f4345f8def3d.ico" />
+  </head>
+
+  <body class="production companies-namespace companies-controller show-action">
+    <div class="page application-page justify-content-start" id="companies-show">
+      <div class="page-main">
+        <div class="navbar-wrapper navbar">
+  <div class="inner-width custom-navbar">
+    <div class="navbar-logo">
+
+      <h1 class="site-name">财报说</h1>
+      <a href="/" class="link-no-underline zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop='{"导航名称":"财报说LOGO", "所在页面":"金禾实业(002597)财务分析"}'>
+        <svg width="98" height="32" viewBox="0 0 146 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M35.6188 12.9213C33.2703 12.9213 30.9483 13.0327 28.6541 13.2393C14.8564 20.341 4.348 32.8778 0 48C9.26972 31.3973 24.8663 18.7682 43.5532 13.3284C40.945 13.0603 38.2983 12.9213 35.6188 12.9213Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M39.1137 5.71605C36.8849 5.48703 34.6234 5.36826 32.3338 5.36826C30.327 5.36826 28.3429 5.46339 26.3824 5.63991C14.5926 11.7083 5.61316 22.4209 1.89813 35.3423C9.81905 21.1558 23.1459 10.3644 39.1137 5.71605Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M32.6511 0.274364C30.8921 0.093586 29.1068 0 27.2997 0C25.7158 0 24.15 0.0751788 22.6025 0.214298C13.2969 5.00404 6.2094 13.4593 3.27707 23.6583C9.52908 12.4609 20.048 3.9434 32.6511 0.274364Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M74.5652 8.33362L70.6237 9.21621L70.4933 12.7539H62.3172V15.5084H66.3881C65.9089 22.4229 64.358 27.603 61.7355 31.0488V34.9591C66.7988 31.9218 69.6154 25.438 70.1858 15.5084H70.4933V36.0133H66.5595V38.7678H74.5652V15.5084H77.7469V12.7539H74.5652V8.33362Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M50.9929 12.414H58.0405V29.1738L61.1882 30.2325V9.66016H47.8452V30.2325L50.9929 29.1738V12.414Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M56.1248 24.5883V14.3521H52.9088V24.5883C53.0223 29.8243 50.9466 33.6896 46.6817 36.1837V39.142C50.3089 37.6458 52.9198 35.4692 54.5166 32.6129C56.1128 35.4011 58.6335 37.5773 62.0774 39.142V36.0474C57.8351 33.1911 55.8505 29.3711 56.1248 24.5883Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M129.338 22.7855H139.841V14.6246H129.338V22.7855ZM143.16 35.5714H139.739V25.5399H143.776V11.8701H141.005C141.416 10.805 141.734 9.63761 141.963 8.3674H137.994C137.811 9.43383 137.503 10.6005 137.071 11.8701H132.11C131.699 10.76 131.402 9.59165 131.22 8.3674H127.251C127.502 9.75074 127.81 10.9184 128.175 11.8701H125.404V25.5399H128.962V25.6762C129.168 30.4597 127.297 33.8712 123.351 35.9115V39.2097C129.897 37.2598 133.09 32.761 132.931 25.71V25.5399H135.805V38.3599H144.877L146 35.565L143.16 35.5714Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M125.472 33.1567V29.7906C123.921 30.6745 122.656 31.3093 121.675 31.6947V17.6507H114.935V20.4052H117.706V37.2374C120.557 36.1497 123.146 34.7892 125.472 33.1567Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M88.6606 15.7806H91.6708V12.992H88.6606V8.40167L84.6572 9.21612V12.992H80.9967V15.7806H84.6572V23.2613C83.4032 23.5114 82.1485 23.7377 80.8939 23.9418V27.2741C82.1712 27.0482 83.4259 26.7978 84.6572 26.5259V35.9791H81.6124V38.768H88.6606V25.472C89.3448 25.2907 90.2794 24.9847 91.4658 24.5541C91.5793 24.5084 91.6708 24.4743 91.7394 24.4518V21.4595C90.7133 21.7771 89.687 22.0715 88.6606 22.3434V15.7806Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M101.612 23.1833H107.235C106.801 25.8359 105.732 28.51 104.432 30.3687C103.338 28.9417 102.251 25.1561 101.612 23.1833ZM109.81 27.9585C110.531 25.895 110.83 23.7085 110.83 21.5239V20.9155H97.5189L97.5192 21.2423C97.5205 23.012 97.8112 24.7727 98.4198 26.4357C99.3637 29.0156 100.66 31.6794 101.866 33.1566C100.702 34.1321 99.3343 35.0047 97.7608 35.7751V39.1078C100.315 38.2239 102.517 37.0556 104.363 35.6054C106.165 37.0556 108.491 38.2239 111.343 39.1078V35.5035C109.724 34.755 108.298 33.9168 107.066 32.9872C108.237 31.5194 109.152 29.8432 109.81 27.9585Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M106.724 16.1886H101.593L102.68 18.8068H110.59V9.55798H92.8341V39.2098H96.8025V23.6013V20.9156V12.3462H106.724V16.1886Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M122.85 12.7401C122.85 14.4972 121.417 15.9217 119.649 15.9217C117.881 15.9217 116.447 14.4972 116.447 12.7401C116.447 10.9826 117.881 9.55811 119.649 9.55811C121.417 9.55811 122.85 10.9826 122.85 12.7401Z" fill="#C1161E"/>
+</svg>
+
+      </a>
+    </div>
+
+    <div class="navbar-search">
+
+  <form class="lg-search input-icon js-search-form zhugeio-track-search-form" action="/companies/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input name="utf8" type="hidden" value="✓">
+    <div class="input-group">
+      <input type="text" autocomplete="off" name="q" placeholder="公司名 / 股票代码" id="navbar-company-search-input"
+        class="form-control header-search pl-2 search-input zhugeio-track-search-input"
+        data-companies-list-md5="50e6d2432cf3ef3d7f7538578840a019">
+      <a class="input-icon-addon zhugeio-track-search-click btn" style="pointer-events: unset;" onclick="$(this).closest('form').submit()" href="javascript:void(0)">
+        <i class="fe fe-search"></i>
+      </a>
+    </div>
+    <table class="table table-bordered table-hover search-data-table"></table>
+</form>  <a class="md-search" data-turbolinks="false" href="/companies/mobile_search">
+    <i class="fas fa-search"></i>
+</a>  <a class="xs-search" href="/companies/mobile_search">
+    <span>公司名<span class="iphone5-text">/股票代码</span><span class="full-text">/行业</span></span><i class="fas fa-search"></i>
+</a></div>
+
+    <ul class="navbar-menu d-none d-md-flex">
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;广场&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/topics">话题</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;行业板块&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/cn_industries/3">行业</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;企业对比&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/companies/compare?code=000651,000333">对比</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;筛选器&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/screener">筛选器</a></li>
+  <li class="nav-item dropdown zhugeio-track-trigger-dropdown" data-zhugeio-event="点击顶部导航栏下拉菜单" data-zhugeio-prop='{"菜单名称":"排行榜", "所在页面": "金禾实业(002597)财务分析" }'>
+    <a class="menu-link dropdown-toggle" href="#" id="rankMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">榜单选股</a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-custom" aria-labelledby="rankMenu">
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;大师榜单&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/formulas">大师榜单</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;涨跌排行榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/general_price_changes">涨跌排行榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;巴菲特稳定盈利榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/markets/A/exaptations">十年成长率排行榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;巴菲特稳定盈利榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/formulas/buffet_roe">巴菲特稳定盈利榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;体质灯号排行榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/formulas/lights">体质灯号排行榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;彼得林奇稳定增长榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/formulas/lynch_stalwarts">彼得林奇稳定增长榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;彼得林奇快速增长榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/formulas/lynch_fastgrower">彼得林奇快速增长榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;科创板&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/companies/stib">科创板</a>
+    </div>
+  </li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;文章中心&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/guides">文章</a></li>
+</ul>
+
+<ul class="navbar-menu d-flex d-md-none">
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;行业板块&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/cn_industries/3">行业</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;公司对比&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/companies/compare?code=000651,000333">对比</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;筛选器&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/screener">筛选器</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;大师榜单&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/formulas">榜单</a></li>
+  <li class="nav-item"><a data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;APP&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" class="menu-link zhugeio-track-trigger-click " href="/app">APP</a></li>
+  <li class="dropdown pr-2 zhugeio-track-trigger-dropdown" data-zhugeio-event="点击顶部导航栏下拉菜单" data-zhugeio-prop='{"菜单名称":"更多功能","所在页面": "金禾实业(002597)财务分析" }'>
+    <a class="menu-link dropdown-toggle" href="#" id="mobileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-custom dropdown-mobile-link" aria-labelledby="mobileMenu">
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;广场&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/topics">话题</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;涨跌排行榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/general_price_changes">涨跌排行榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;十年成长率排行榜&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/markets/A/exaptations">十年成长率排行榜</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;科创板&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/companies/stib">科创板</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;新手指南&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/guides">新手指南</a>
+      <a class="dropdown-item zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;会员功能&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/pricing">会员功能</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item flex-between" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;我的积分&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/jifen">
+        我的积分
+</a>      
+    </div>
+  </li>
+</ul>
+
+    <ul class="navbar-user">
+  
+  <a class="navbar-vip-icon font-size-14 font-weight-500 link-no-underline zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;APP&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/app">APP</a>
+  <a class="navbar-vip-icon font-size-14 font-weight-500 link-no-underline zhugeio-track-trigger-click" data-zhugeio-event="点击顶部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;会员功能&quot;,&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;}" href="/pricing">会员功能</a>
+    <a class="btn btn-theme btn-navbar btn-signin mr-0 mr-md-3 js-login-required zhugeio-track-trigger-click" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;导航栏&quot;}" href="javascript:void(0)">登录/注册</a>
+</ul>
+
+  </div>
+</div>
+        <div class="full-screen-layout">
+
+        <div class="company-overview">
+  <div class="company-header">
+  <div class="inner-width py-2">
+
+    <nav class="breadcrumb company-breadcrumb">
+    <a class="breadcrumb-item" href="/markets/A">A股</a>
+    <a class="breadcrumb-item" href="/cn_industries/3">食品饮料</a>
+    <a class="breadcrumb-item" href="/cn_industries/2">食品加工</a>
+    <a class="breadcrumb-item" href="/cn_industries/1?company_id=14278">食品综合</a>
+    <a class="breadcrumb-item" href="/companies/002597">金禾实业</a>
+</nav>
+
+
+    <div class="row">
+      <div class="company-header-info col-12 col-lg-7">
+        <div class="company-header-title">
+          
+  <h2 class="company-title" title="安徽金禾实业股份有限公司是一家主要从事精细化工产品和基础化工产品生产和销售的企业。公司主要产品有两大类,一、精细化工产品为食品添加剂,包括安赛蜜、甲基麦芽酚、乙基麦芽酚.二、基础化工产品主要为液氨、碳酸氢铵、三聚氰胺、甲醛、硝酸、新戊二醇等.公司属于高新技术企业,研发中心被认定为省级企业技术中心。">金禾实业(002597)</h2>
+
+          <span class="header-action-btn">
+
+            <span class="js-company-yield-tracking-span">
+              
+            </span>
+
+            <span id="js-portfolio-company-control-14278">
+              
+  <div class="dropdown">
+    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" class="btn btn-outline-secondary action-btn">
+      加自选
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item portfolio-dropdown-item js-login-required zhugeio-track-trigger-click" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;加自选&quot;}" href="javascript:void(0)">请登录后操作</a>
+    </div>
+  </div>
+
+            </span>
+          </span>
+        </div>
+        <input value="SZSE" type="hidden" id="company-market">
+
+        <div class="company-header-discription">
+            <span class="btn-lynch turnarounds-tag">困境反转型</span>
+  <span class="btn-lynch cyclicals-tag">景气循环型</span>
+
+          
+          
+          
+          
+
+          <div class="company-heade-discription-text">
+            行业:
+            <a class="company-discription-link" href="/markets/A/cn_industries/1?company_id=14278">
+              食品综合
+</a>
+            <span class="num mr-3" data-placement="top" data-toggle="tooltip" title="" data-original-title="所属三级行业 CBS 财报评分排名">
+                (排名<a class="vip-link small js-login-required zhugeio-track-trigger-click" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;行业排名&quot;}" href="javascript:void(0)">[注册后可见]</a>)
+            </span>
+
+            主营:
+            <a href="/companies/002597/infos">
+                    食品添加剂、食品用...
+</a>          </div>
+        </div>
+
+        <div class="row mt-4">
+          <ul class="company-header-price col-12 col-sm-7">
+            <li class="price">
+              <div class="row">
+                <div class="col-10">
+                  ¥37.47
+                  <div class="price-change">
+                    <span style="color:#87d068">-2.85%</span>
+                    <span class="price-tip"> 昨日收盘价</span>
+                  </div>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="link-no-underline" data-toggle="tooltip" data-placement="top" data-title="什么是灯号？点击查看" target="_blank" href="/helps/value_matrix">
+    <div class="led-box">
+      <div class="led-circle led-red"></div>
+      <p class="led-text"><span style="color:#de0c2d">过热</span></p>
+    </div>
+</a>
+                </div>
+              </div>
+           </li>
+              <li>
+                <span data-placement="top" data-toggle="tooltip" title="以每股收益(EPS)为基准,反映市场溢价倍数与热度,也可以简单理解为:如果锁定当前每股收益,要等待多少年才能回本">
+                <a class="wiki-terms" href="/terms/002597/pe_ratio">PE: 28.75 </a>
+                </span>
+                <span data-placement="top" data-toggle="tooltip" title="以每股净资产(BPS)为基准,反映市场溢价倍数与热度,也可以简单理解为:相对于当前每股净资产,要付出多少倍的溢价才能买到" class="ml-3">
+                  <a class="wiki-terms" href="/terms/002597/pb_ratio">PB: 4.56 </a>
+                </span>
+              </li>
+              <li class="company-value">
+                <span class="mr-4">市值: 2.1 百亿</span>
+                <span>企业净值: 47.64 亿</span>
+              </li>
+
+                <li class="company-signal">
+                  <span class="company-signal-text">风险信号:</span>
+                    <a class="btn btn-outline-danger btn-sm zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;排雷指标&quot;}" href="/companies/002597/danger_signal">1 条风险</a>
+                  <a class="btn btn-outline-success btn-sm zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;成长指标&quot;}" href="/companies/002597/dcf">3 条增长信号</a>
+                  <a class="btn btn-outline-warning btn-sm zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;成长指标&quot;}" href="/companies/002597/dcf">6 条衰退信号</a>
+                </li>
+            <div class="notice-list">
+</div>
+
+          </ul>
+
+          <div class="company-header-price-list col-12 col-sm-5">
+            <ul class="ratio-lists" data-placement="top" data-toggle="tooltip" title="用三年半股价趋势估算合理价">
+  <li class="list-item ratio-high"><span class="des">27.74倍市盈率</span> <span class="sign">=</span> <span class="data">¥36.14</span></li>
+  <li class="list-item ratio-warm">
+    <span class="des">23.99倍市盈率</span>
+    <span class="sign">=</span>
+    <a class="ratio-link js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;五线谱价格&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">[注册后可见]</a>
+  </li>
+  <li class="list-item ratio-std"><span class="des">20.24倍市盈率</span> <span class="sign">=</span> <span class="data">¥26.37</span></li>
+  <li class="list-item ratio-normal">
+    <span class="des">16.49倍市盈率</span>
+    <span class="sign">=</span>
+    <a class="ratio-link js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;五线谱价格&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">[注册后可见]</a>
+  </li>
+  <li class="list-item ratio-low"><span class="des">12.74倍市盈率</span> <span class="sign">=</span> <span class="data">¥16.6</span></li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      <div class="company-header-chart col-12 col-lg-5">
+        <div class="header-chart">
+          <input id="companySymbol" type="hidden" value="SZSE:002597">
+          <div class="page-tv-chart-container" id="tv_chart_container" style="height:232px"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <div class="company-tabs scroll-fixed-top" data-only-fixed-device="mobile">
+  <div class="company-tabs__container">
+    <div class="row">
+      <div class="col-12 col-lg-6 col-xl-7">
+        <p class="company-tab-title">快速分析</p>
+        <ul class="company-tab" role="tablist">
+          <li class="company-tab-item" role="presentation">
+            <a data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;概览&quot;}" class="company-tab-item__link zhugeio-track-trigger-click active" aria-current="page" href="/companies/002597">综合概览</a>
+          </li>
+          <li class="company-tab-item" role="presentation">
+            <a data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;排雷指标&quot;}" class="company-tab-item__link new-link zhugeio-track-trigger-click" href="/companies/002597/danger_signal">排雷指标</a>
+          </li>
+          <li class="company-tab-item" role="presentation">
+            <a data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;成长指标&quot;}" class="company-tab-item__link zhugeio-track-trigger-click" href="/companies/002597/fscore_signal">成长指标</a>
+          </li>
+          <li class="company-tab-item" role="presentation">
+            <a data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;股价走势&quot;}" class="company-tab-item__link zhugeio-track-trigger-click" href="/companies/002597/trend_info">PE 走势</a>
+          </li>
+          <li class="company-tab-item" role="presentation">
+            <a data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;问大家&quot;}" class="company-tab-item__link zhugeio-track-trigger-click" href="/companies/002597/comments">问大家</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-5 company-deep-tab">
+        <p class="company-tab-title">深度分析</p>
+        <ul class="company-tab">
+          <li class="company-tab-item"><a class="deep-tab-link zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;原始财报&quot;}" href="/companies/002597/financials">原始财报</a></li>
+          <li class="company-tab-item"><a class="deep-tab-link zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;杜邦分析图&quot;}" href="/companies/002597/dupont">杜邦分析</a></li>
+          <li class="company-tab-item"><a class="deep-tab-link zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;财报分析&quot;}" href="/companies/002597/financial_reports">财报分析</a></li>
+          <li class="company-tab-item"><a class="deep-tab-link zhugeio-track-trigger-click" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;成长性分析&quot;}" href="/companies/002597/dcf">成长性分析</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+        <div class="company-body">
+            <div class="cbs-analysis-box" id="cbsAnalysis">
+                <div class="company-cbs-header">
+    <p class="company-cbs-title">财务状况</p>
+    <ul class="nav nav-tabs range-tabs" id="cbs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="cbs-yearly-tab" data-toggle="tab" href="#cbs-yearly" role="tab" aria-controls="cbs-yearly" aria-selected="true">按年</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="cbs-quarterly-tab" data-toggle="tab" href="#cbs-quarterly" role="tab" aria-controls="cbs-quarterly" aria-selected="false">按季</a>
+  </li>
+</ul>
+
+  </div>
+        <div class="tab-content" id="cbsTabContent">
+            <div class="tab-pane al-description show active" id="cbs-yearly" role="tabpanel" aria-labelledby="cbs-yearly-tab">
+  <ul class="nav nav-tabs nav-justified analysis-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+  <a href="#discript_by_2016" class="nav-link d-flex justify-content-center w-100 py-1 " aria-controls="#discript_by_2016" role="tab" data-toggle="tab">
+    2016  </a>
+</li>
+
+      <li class="nav-item" role="presentation">
+  <a href="#discript_by_2017" class="nav-link d-flex justify-content-center w-100 py-1 " aria-controls="#discript_by_2017" role="tab" data-toggle="tab">
+    2017  </a>
+</li>
+
+      <li class="nav-item" role="presentation">
+  <a href="#discript_by_2018" class="nav-link d-flex justify-content-center w-100 py-1 " aria-controls="#discript_by_2018" role="tab" data-toggle="tab">
+    2018  </a>
+</li>
+
+      <li class="nav-item" role="presentation">
+  <a href="#discript_by_2019" class="nav-link d-flex justify-content-center w-100 py-1 " aria-controls="#discript_by_2019" role="tab" data-toggle="tab">
+    2019  </a>
+</li>
+
+      <li class="nav-item" role="presentation">
+  <a href="#discript_by_近12个月" class="nav-link d-flex justify-content-center w-100 py-1 active" aria-controls="#discript_by_近12个月" role="tab" data-toggle="tab">
+    近12个月  </a>
+</li>
+
+  </ul>
+  <div class="tab-content cbs-radar-content py-4 px-2 px-sm-4 px-xl-7">
+    <div class="tab-pane " role="tabpanel" id="discript_by_2016">
+  <p class="text-center font-size-20 js-pdf-remove">
+    金禾实业
+    (002597)
+  </p>
+  
+<div class="d-flex justify-content-center cbs_radar_container">
+  <div class="cbs_radar" id="cbs_radar_yearly_2016" data-blurred="false"></div>
+</div>
+
+
+
+<div class="text-center mb-5">
+    【财报说】 CBS 评分:
+  <a data-target="#annualCbsChartModal" data-toggle="modal" class="best span_l" href="#annualCbsChartModal">72.25</a>
+  
+  <a data-placement="top" data-toggle="tooltip" data-title="点击查看评分标准" class="link-no-underline font-weight-500 mr-1" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+    <i class="far fa-question-circle mr-1 text-secondary small"></i>
+</a>
+    <p><a class="cbs-trend-link js-pdf-remove" href="https://caibaoshuo.com/companies/002597/financial_reports.ttm">查看财报分析</a></p>
+</div>
+
+  <table class="table table-sm">
+    <!-- 现金流 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016062954" target="_blank" rel="noopener noreferrer nofollow">现金流</a>
+  </th>
+  <td>
+    <div class="cash_part">
+      <span class="span_l good" title="现金与约当现金比率(15%~25%)" data-placement="top" data-toggle="tooltip">
+  现金充足.
+</span>
+
+      <span class="span_m normal" title="现金与约当现金比率(0~100/100/10)" data-placement="top" data-toggle="tooltip">
+  现金流状况一般.
+</span>
+
+      <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+      
+    </div>
+  </td>
+</tr>
+
+    <!-- 盈利能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164353" target="_blank" rel="noopener noreferrer nofollow">盈利能力</a>
+  </th>
+  <td>
+    <div class="profit_part">
+
+        <span class="span_l normal" title="毛利率(20%~30%)" data-placement="top" data-toggle="tooltip">
+  毛利还可以,
+</span>
+
+        <span class="span_m" title="费用率" data-placement="top" data-toggle="tooltip">
+  费用率 8 个点.
+</span>
+
+        <span class="span_l better" title="营业费用率(5%~9%)" data-placement="top" data-toggle="tooltip">
+  生意又大又省钱.
+</span>
+
+        <span class="span_l good" title="净利率(10%~20%)" data-placement="top" data-toggle="tooltip">
+  税后利润不错,
+</span>
+
+        <span class="span_s normal" title="场外收入" data-placement="top" data-toggle="tooltip">
+  去年有不少额外收入!
+</span>
+
+        <span class="span_m good" title="ROE(20%~30%)" data-placement="top" data-toggle="tooltip">
+  能够打败巴菲特的回报率.
+</span>
+
+        <span class="span_m good" title="eps &gt; 0" data-placement="top" data-toggle="tooltip">
+  每股去年为公司赚到了 0.97 元 钱.
+</span>
+
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 营运能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164333" target="_blank" rel="noopener noreferrer nofollow">营运能力</a>
+  </th>
+  <td>
+    <div class="management_part">
+        <span class="span_l worse" title="总资产周转率(&lt;1)" data-placement="top" data-toggle="tooltip">
+  周转很慢!
+</span>
+
+        <span class="span_m good" title="现金与约当现金比率(15%~25%)" data-placement="top" data-toggle="tooltip">
+  好在现金还算充足.
+</span>
+
+        <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+        <span class="span_s good" title="存货周转天数(30~60)" data-placement="top" data-toggle="tooltip">
+  货卖的不错.
+</span>
+
+        <span class="span_s" title="完整生意周期" data-placement="top" data-toggle="tooltip">
+  做一轮生意要 109 天.
+</span>
+
+        
+        
+    </div>
+  </td>
+</tr>
+
+    <!-- 财务结构 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063094" target="_blank" rel="noopener noreferrer nofollow">财务结构</a>
+  </th>
+  <td>
+
+    <div class="structure_part">
+
+      <span class="span_l better" title="负债占资产比率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  不需举债就能存活的很好,
+</span>
+
+      <span class="span_m good" title="长期资金占不动产及设备比率(100%~200%)" data-placement="top" data-toggle="tooltip">
+  长期资金来源稳健.
+</span>
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 偿债能力 !-->
+    <tr>
+  <th class="td_w"><a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063154" target="_blank" rel="noopener noreferrer nofollow">偿债能力</a></th>
+  <td>
+    <span class="span_m best" title="流动比率(&gt;150%)" data-placement="top" data-toggle="tooltip">
+  即便发生债务纠纷,公司也能立即清偿.
+</span>
+
+  </td>
+</tr>
+
+
+    <!-- 审计意见 !-->
+  </table>
+  <p class="analysis-statement js-pdf-remove">
+  <i class="far fa-exclamation-circle mr-1"></i>以上财务分析结果仅供参考，不构成投资指导与建议 <br>
+</p>
+
+  </div>
+<div class="tab-pane " role="tabpanel" id="discript_by_2017">
+  <p class="text-center font-size-20 js-pdf-remove">
+    金禾实业
+    (002597)
+  </p>
+  
+<div class="d-flex justify-content-center cbs_radar_container">
+  <div class="cbs_radar" id="cbs_radar_yearly_2017" data-blurred="false"></div>
+</div>
+
+
+
+<div class="text-center mb-5">
+    【财报说】 CBS 评分:
+  <a data-target="#annualCbsChartModal" data-toggle="modal" class="best span_l" href="#annualCbsChartModal">83.58</a>
+  
+  <a data-placement="top" data-toggle="tooltip" data-title="点击查看评分标准" class="link-no-underline font-weight-500 mr-1" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+    <i class="far fa-question-circle mr-1 text-secondary small"></i>
+</a>
+    <p><a class="cbs-trend-link js-pdf-remove" href="https://caibaoshuo.com/companies/002597/financial_reports.ttm">查看财报分析</a></p>
+</div>
+
+  <table class="table table-sm">
+    <!-- 现金流 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016062954" target="_blank" rel="noopener noreferrer nofollow">现金流</a>
+  </th>
+  <td>
+    <div class="cash_part">
+      <span class="span_l best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  现金超多.
+</span>
+
+      <span class="span_m normal" title="现金与约当现金比率(0~100/100/10)" data-placement="top" data-toggle="tooltip">
+  现金流状况一般.
+</span>
+
+      <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+      
+    </div>
+  </td>
+</tr>
+
+    <!-- 盈利能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164353" target="_blank" rel="noopener noreferrer nofollow">盈利能力</a>
+  </th>
+  <td>
+    <div class="profit_part">
+
+        <span class="span_l good" title="毛利率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  毛利还不错,
+</span>
+
+        <span class="span_m" title="费用率" data-placement="top" data-toggle="tooltip">
+  费用率 8 个点.
+</span>
+
+        <span class="span_l better" title="营业费用率(5%~9%)" data-placement="top" data-toggle="tooltip">
+  生意又大又省钱.
+</span>
+
+        <span class="span_l better" title="净利率(20%~30%)" data-placement="top" data-toggle="tooltip">
+  税后利润优异,
+</span>
+
+        
+        <span class="span_m better" title="ROE(30%~40%)" data-placement="top" data-toggle="tooltip">
+  很 NB 的回报率.
+</span>
+
+        <span class="span_m good" title="eps &gt; 0" data-placement="top" data-toggle="tooltip">
+  每股去年为公司赚到了 1.81 元 钱.
+</span>
+
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 营运能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164333" target="_blank" rel="noopener noreferrer nofollow">营运能力</a>
+  </th>
+  <td>
+    <div class="management_part">
+        <span class="span_l worse" title="总资产周转率(&lt;1)" data-placement="top" data-toggle="tooltip">
+  周转很慢!
+</span>
+
+        <span class="span_m best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  还好现金超级多.
+</span>
+
+        <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+        <span class="span_s good" title="存货周转天数(30~60)" data-placement="top" data-toggle="tooltip">
+  货卖的不错.
+</span>
+
+        <span class="span_s" title="完整生意周期" data-placement="top" data-toggle="tooltip">
+  做一轮生意要 98 天.
+</span>
+
+        <span class="span_s best" title="缺钱天数(0~15)" data-placement="top" data-toggle="tooltip">
+  缺钱天数为 -5 天,不需要资金就可以做生意哦.
+</span>
+
+        
+    </div>
+  </td>
+</tr>
+
+    <!-- 财务结构 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063094" target="_blank" rel="noopener noreferrer nofollow">财务结构</a>
+  </th>
+  <td>
+
+    <div class="structure_part">
+
+      <span class="span_l better" title="负债占资产比率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  不需举债就能存活的很好,
+</span>
+
+      <span class="span_m better" title="长期资金占不动产及设备比率(200%~300%)" data-placement="top" data-toggle="tooltip">
+  长期资金来源充足.
+</span>
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 偿债能力 !-->
+    <tr>
+  <th class="td_w"><a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063154" target="_blank" rel="noopener noreferrer nofollow">偿债能力</a></th>
+  <td>
+    <span class="span_m best" title="流动比率(&gt;150%)" data-placement="top" data-toggle="tooltip">
+  即便发生债务纠纷,公司也能立即清偿.
+</span>
+
+  </td>
+</tr>
+
+
+    <!-- 审计意见 !-->
+  </table>
+  <p class="analysis-statement js-pdf-remove">
+  <i class="far fa-exclamation-circle mr-1"></i>以上财务分析结果仅供参考，不构成投资指导与建议 <br>
+</p>
+
+  </div>
+<div class="tab-pane " role="tabpanel" id="discript_by_2018">
+  <p class="text-center font-size-20 js-pdf-remove">
+    金禾实业
+    (002597)
+  </p>
+  
+<div class="d-flex justify-content-center cbs_radar_container">
+  <div class="cbs_radar" id="cbs_radar_yearly_2018" data-blurred="true"></div>
+</div>
+
+
+
+<div class="text-center mb-5">
+    【财报说】 CBS 评分:
+  <span class="blurred span_l">[75~100]</span>
+  <a data-placement="top" data-toggle="tooltip" data-title="根据财报做出的综合评分" class="text-secondary small" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+ <i class="far fa-question-circle icon-in-radar-chart" ></i>
+</a>
+  <a data-placement="top" data-toggle="tooltip" data-title="点击查看评分标准" class="link-no-underline font-weight-500 mr-1" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+    <i class="far fa-question-circle mr-1 text-secondary small"></i>
+</a>
+    <p><a class="cbs-trend-link js-pdf-remove" href="https://caibaoshuo.com/companies/002597/financial_reports.ttm">查看财报分析</a></p>
+</div>
+
+  <table class="table table-sm">
+    <!-- 现金流 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016062954" target="_blank" rel="noopener noreferrer nofollow">现金流</a>
+  </th>
+  <td>
+    <div class="cash_part">
+      <span class="span_l best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  现金超多.
+</span>
+
+      <span class="span_m worse" title="现金流量比率(有任意项&lt;0)" data-placement="top" data-toggle="tooltip">
+  现金流状况不佳.
+</span>
+
+      <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+      
+    </div>
+  </td>
+</tr>
+
+    <!-- 盈利能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164353" target="_blank" rel="noopener noreferrer nofollow">盈利能力</a>
+  </th>
+  <td>
+    <div class="profit_part">
+
+        <span class="span_l good" title="毛利率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  毛利还不错,
+</span>
+
+        <span class="span_m" title="费用率" data-placement="top" data-toggle="tooltip">
+  费用率 8 个点.
+</span>
+
+        <span class="span_l better" title="营业费用率(5%~9%)" data-placement="top" data-toggle="tooltip">
+  生意又大又省钱.
+</span>
+
+        <span class="span_l better" title="净利率(20%~30%)" data-placement="top" data-toggle="tooltip">
+  税后利润优异,
+</span>
+
+        
+        <span class="span_m good" title="ROE(20%~30%)" data-placement="top" data-toggle="tooltip">
+  能够打败巴菲特的回报率.
+</span>
+
+        <span class="span_m good" title="eps &gt; 0" data-placement="top" data-toggle="tooltip">
+  每股去年为公司赚到了 1.62 元 钱.
+</span>
+
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 营运能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164333" target="_blank" rel="noopener noreferrer nofollow">营运能力</a>
+  </th>
+  <td>
+    <div class="management_part">
+        <span class="span_l worse" title="总资产周转率(&lt;1)" data-placement="top" data-toggle="tooltip">
+  周转很慢!
+</span>
+
+        <span class="span_m best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  还好现金超级多.
+</span>
+
+        <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+        <span class="span_s good" title="存货周转天数(30~60)" data-placement="top" data-toggle="tooltip">
+  货卖的不错.
+</span>
+
+        <span class="span_s" title="完整生意周期" data-placement="top" data-toggle="tooltip">
+  做一轮生意要 116 天.
+</span>
+
+        <span class="span_s good" title="缺钱天数(0~15)" data-placement="top" data-toggle="tooltip">
+  缺钱天数仅为 1 天.
+</span>
+
+        
+    </div>
+  </td>
+</tr>
+
+    <!-- 财务结构 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063094" target="_blank" rel="noopener noreferrer nofollow">财务结构</a>
+  </th>
+  <td>
+
+    <div class="structure_part">
+
+      <span class="span_l better" title="负债占资产比率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  不需举债就能存活的很好,
+</span>
+
+      <span class="span_m better" title="长期资金占不动产及设备比率(200%~300%)" data-placement="top" data-toggle="tooltip">
+  长期资金来源充足.
+</span>
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 偿债能力 !-->
+    <tr>
+  <th class="td_w"><a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063154" target="_blank" rel="noopener noreferrer nofollow">偿债能力</a></th>
+  <td>
+    <span class="span_m best" title="流动比率(&gt;150%)" data-placement="top" data-toggle="tooltip">
+  即便发生债务纠纷,公司也能立即清偿.
+</span>
+
+  </td>
+</tr>
+
+
+    <!-- 审计意见 !-->
+  </table>
+  <p class="analysis-statement js-pdf-remove">
+  <i class="far fa-exclamation-circle mr-1"></i>以上财务分析结果仅供参考，不构成投资指导与建议 <br>
+</p>
+
+  </div>
+<div class="tab-pane " role="tabpanel" id="discript_by_2019">
+  <p class="text-center font-size-20 js-pdf-remove">
+    金禾实业
+    (002597)
+  </p>
+  
+<div class="d-flex justify-content-center cbs_radar_container">
+  <div class="cbs_radar" id="cbs_radar_yearly_2019" data-blurred="true"></div>
+</div>
+
+
+
+<div class="text-center mb-5">
+    【财报说】 CBS 评分:
+  <span class="blurred span_l">[75~100]</span>
+  <a data-placement="top" data-toggle="tooltip" data-title="根据财报做出的综合评分" class="text-secondary small" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+ <i class="far fa-question-circle icon-in-radar-chart" ></i>
+</a>
+  <a data-placement="top" data-toggle="tooltip" data-title="点击查看评分标准" class="link-no-underline font-weight-500 mr-1" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+    <i class="far fa-question-circle mr-1 text-secondary small"></i>
+</a>
+    <p><a class="cbs-trend-link js-pdf-remove" href="https://caibaoshuo.com/companies/002597/financial_reports.ttm">查看财报分析</a></p>
+</div>
+
+  <table class="table table-sm">
+    <!-- 现金流 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016062954" target="_blank" rel="noopener noreferrer nofollow">现金流</a>
+  </th>
+  <td>
+    <div class="cash_part">
+      <span class="span_l best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  现金超多.
+</span>
+
+      <span class="span_m normal" title="现金与约当现金比率(0~100/100/10)" data-placement="top" data-toggle="tooltip">
+  现金流状况一般.
+</span>
+
+      <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+      
+    </div>
+  </td>
+</tr>
+
+    <!-- 盈利能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164353" target="_blank" rel="noopener noreferrer nofollow">盈利能力</a>
+  </th>
+  <td>
+    <div class="profit_part">
+
+        <span class="span_l good" title="毛利率(30%~40%)" data-placement="top" data-toggle="tooltip">
+  毛利还不错,
+</span>
+
+        <span class="span_m" title="费用率" data-placement="top" data-toggle="tooltip">
+  费用率 8 个点.
+</span>
+
+        <span class="span_l better" title="营业费用率(5%~9%)" data-placement="top" data-toggle="tooltip">
+  生意又大又省钱.
+</span>
+
+        <span class="span_l better" title="净利率(20%~30%)" data-placement="top" data-toggle="tooltip">
+  税后利润优异,
+</span>
+
+        
+        <span class="span_m normal" title="ROE(15%~20%)" data-placement="top" data-toggle="tooltip">
+  不错的回报率.
+</span>
+
+        <span class="span_m good" title="eps &gt; 0" data-placement="top" data-toggle="tooltip">
+  每股去年为公司赚到了 1.45 元 钱.
+</span>
+
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 营运能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164333" target="_blank" rel="noopener noreferrer nofollow">营运能力</a>
+  </th>
+  <td>
+    <div class="management_part">
+        <span class="span_l worse" title="总资产周转率(&lt;1)" data-placement="top" data-toggle="tooltip">
+  周转很慢!
+</span>
+
+        <span class="span_m best" title="现金与约当现金比率(&gt;25%)" data-placement="top" data-toggle="tooltip">
+  还好现金超级多.
+</span>
+
+        <span class="span_m better" title="应收款项周转天数(15~80)" data-placement="top" data-toggle="tooltip">
+  收款很快.
+</span>
+
+        <span class="span_s good" title="存货周转天数(30~60)" data-placement="top" data-toggle="tooltip">
+  货卖的不错.
+</span>
+
+        <span class="span_s" title="完整生意周期" data-placement="top" data-toggle="tooltip">
+  做一轮生意要 93 天.
+</span>
+
+        <span class="span_s best" title="缺钱天数(0~15)" data-placement="top" data-toggle="tooltip">
+  缺钱天数为 -6 天,不需要资金就可以做生意哦.
+</span>
+
+        
+    </div>
+  </td>
+</tr>
+
+    <!-- 财务结构 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063094" target="_blank" rel="noopener noreferrer nofollow">财务结构</a>
+  </th>
+  <td>
+
+    <div class="structure_part">
+
+      <span class="span_l better" title="负债占资产比率(0%~30%)" data-placement="top" data-toggle="tooltip">
+  基本没什么杠杆,看来股东非常看好公司!
+</span>
+
+      <span class="span_m better" title="长期资金占不动产及设备比率(200%~300%)" data-placement="top" data-toggle="tooltip">
+  长期资金来源充足.
+</span>
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 偿债能力 !-->
+    <tr>
+  <th class="td_w"><a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063154" target="_blank" rel="noopener noreferrer nofollow">偿债能力</a></th>
+  <td>
+    <span class="span_m best" title="流动比率(&gt;150%)" data-placement="top" data-toggle="tooltip">
+  即便发生债务纠纷,公司也能立即清偿.
+</span>
+
+  </td>
+</tr>
+
+
+    <!-- 审计意见 !-->
+  </table>
+  <p class="analysis-statement js-pdf-remove">
+  <i class="far fa-exclamation-circle mr-1"></i>以上财务分析结果仅供参考，不构成投资指导与建议 <br>
+</p>
+
+  </div>
+<div class="tab-pane active" role="tabpanel" id="discript_by_近12个月">
+  <p class="text-center font-size-20 js-pdf-remove">
+    金禾实业
+    (002597)
+  </p>
+  
+<div class="d-flex justify-content-center cbs_radar_container">
+  <div class="cbs_radar" id="cbs_radar_yearly_近12个月" data-blurred="true"></div>
+</div>
+
+
+
+<div class="text-center mb-5">
+    【财报说】 CBS 评分:
+  <span class="blurred span_l">[75~100]</span>
+  <a data-placement="top" data-toggle="tooltip" data-title="根据财报做出的综合评分" class="text-secondary small" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+ <i class="far fa-question-circle icon-in-radar-chart" ></i>
+</a>
+  <a data-placement="top" data-toggle="tooltip" data-title="点击查看评分标准" class="link-no-underline font-weight-500 mr-1" target="_blank" rel="noopener noreferrer nofollow" href="/helps/cbs_chart">
+    <i class="far fa-question-circle mr-1 text-secondary small"></i>
+</a>
+    <p><a class="cbs-trend-link js-pdf-remove" href="https://caibaoshuo.com/companies/002597/financial_reports.ttm">查看财报分析</a></p>
+</div>
+
+  <table class="table table-sm">
+    <!-- 现金流 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016062954" target="_blank" rel="noopener noreferrer nofollow">现金流</a>
+  </th>
+  <td>
+    <div class="cash_part">
+        <a class="vip-link small js-login-required zhugeio-track-trigger-click" data-afid="annually_radar_chart" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;现金流&quot;,&quot;afid&quot;:&quot;annually_radar_chart&quot;}" href="javascript:void(0)">[注册后可见]</a>
+      
+    </div>
+  </td>
+</tr>
+
+    <!-- 盈利能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164353" target="_blank" rel="noopener noreferrer nofollow">盈利能力</a>
+  </th>
+  <td>
+    <div class="profit_part">
+
+        <span class="span_l normal" title="毛利率(20%~30%)" data-placement="top" data-toggle="tooltip">
+  毛利还可以,
+</span>
+
+        <span class="span_m" title="费用率" data-placement="top" data-toggle="tooltip">
+  费用率 9 个点.
+</span>
+
+        <span class="span_l good" title="营业费用率(9%~13%)" data-placement="top" data-toggle="tooltip">
+  市场规模很大.
+</span>
+
+        <span class="span_l good" title="净利率(10%~20%)" data-placement="top" data-toggle="tooltip">
+  税后利润不错,
+</span>
+
+        
+        <span class="span_m normal" title="ROE(15%~20%)" data-placement="top" data-toggle="tooltip">
+  不错的回报率.
+</span>
+
+        <span class="span_m good" title="eps &gt; 0" data-placement="top" data-toggle="tooltip">
+  每股近12个月为公司赚到了 1.3 元 钱.
+</span>
+
+
+    </div>
+  </td>
+</tr>
+
+    <!-- 营运能力 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016164333" target="_blank" rel="noopener noreferrer nofollow">营运能力</a>
+  </th>
+  <td>
+    <div class="management_part">
+        <a class="vip-link small js-login-required zhugeio-track-trigger-click" data-afid="annually_radar_chart" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;营运能力&quot;,&quot;afid&quot;:&quot;annually_radar_chart&quot;}" href="javascript:void(0)">[注册后可见]</a>
+    </div>
+  </td>
+</tr>
+
+    <!-- 财务结构 !-->
+    <tr>
+  <th class="td_w">
+    <a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063094" target="_blank" rel="noopener noreferrer nofollow">财务结构</a>
+  </th>
+  <td>
+
+    <div class="structure_part">
+
+        <a class="vip-link small js-login-required zhugeio-track-trigger-click" data-afid="annually_radar_chart" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;财务结构&quot;,&quot;afid&quot;:&quot;annually_radar_chart&quot;}" href="javascript:void(0)">[注册后可见]</a>
+    </div>
+  </td>
+</tr>
+
+    <!-- 偿债能力 !-->
+    <tr>
+  <th class="td_w"><a class="text-secondary" href="https://caibaoshuo.zendesk.com/hc/zh-cn/articles/360016063154" target="_blank" rel="noopener noreferrer nofollow">偿债能力</a></th>
+  <td>
+    <span class="span_m best" title="流动比率(&gt;150%)" data-placement="top" data-toggle="tooltip">
+  即便发生债务纠纷,公司也能立即清偿.
+</span>
+
+  </td>
+</tr>
+
+
+    <!-- 审计意见 !-->
+  </table>
+  <p class="analysis-statement js-pdf-remove">
+  <i class="far fa-exclamation-circle mr-1"></i>以上财务分析结果仅供参考，不构成投资指导与建议 <br>
+</p>
+
+  </div>
+
+  </div>
+  <div class="modal cbs-chart-modal fade" id="annualCbsChartModal" tabindex="-1" role="dialog" aria-labelledby="annualCbsChartModalLabel" aria-hidden="true">
+  <div class="modal-dialog cbs-chart-modal__dialog" role="document">
+    <div class="modal-content">
+      <h3 class="secondary-title pl-4">CBS 变化图（年）</h3>
+      <div class="blurred">
+  <img src="https://assets.caibaoshuo.com/images/blur/cbs-trend.png" />
+  <div class="blurred__content">
+    <div class="blurred__signup-tips">
+        <h5 class="h4">注册会员可见</h5>
+        <a class="btn btn-outline-theme py-1 px-8 js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;什么是 CBS 变化图？&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">立即注册</a>
+        <a class="text-theme mt-3 small" target="_blank" rel="noopener noreferrer nofollow" href="/companies/600519#annualCbsChartModal">&gt;&gt;预览此功能&lt;&lt;</a>
+      </div>
+  </div>
+</div>
+
+  </div>
+</div>
+</div>
+
+</div>
+
+      <div class="tab-pane al-description fade" id="cbs-quarterly" role="tabpanel" aria-labelledby="cbs-quarterly-tab">
+    <div class="blurred">
+  <img src="https://assets.caibaoshuo.com/images/blur/quartly-al.png" />
+  <div class="blurred__content">
+    <div class="blurred__signup-tips">
+        <h5 class="h4">注册会员可见</h5>
+        <a class="btn btn-outline-theme py-1 px-8 js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;什么是财务季度分析？&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">立即注册</a>
+        <a class="text-theme mt-3 small" target="_blank" rel="noopener noreferrer nofollow" href="/companies/600519#cbs-quarterly">&gt;&gt;预览此功能&lt;&lt;</a>
+      </div>
+  </div>
+</div>
+
+</div>
+
+  </div>
+</div>
+
+    <div class="price-analysis-box">
+  <div class="box-content pt-2 px-0">
+    <ul class="nav company-price-tabs" id="priceTab" role="tablist">
+  <li class="nav-item text-center">
+    <a class="nav-link zhugeio-track-trigger-click active" id="notation-tab" data-toggle="tab" href="#notation" role="tab" aria-controls="notation" aria-selected="true" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop='{"导航名称": "五线谱趋势"}'>股价趋势</a>
+  </li>
+  <li class="nav-item text-center">
+    <a class="nav-link zhugeio-track-trigger-click" id="coordinate-tab" data-toggle="tab" href="#coordinate" role="tab" aria-controls="coordinate" aria-selected="false" data-zhugeio-event="点击功能导航_公司详情页" data-zhugeio-prop='{"导航名称": "价值矩阵"}'>综合价值矩阵</a>
+  </li>
+</ul>
+
+    <div class="tab-content" id="priceTabContent">
+      <div class="tab-pane fade show active px-2 px-sm-4 px-xl-7" id="notation" role="tabpanel" aria-labelledby="notation-tab">
+          <div class="blurred">
+  <img src="https://assets.caibaoshuo.com/images/blur/notation.png" />
+  <div class="blurred__content">
+    <div class="blurred__signup-tips">
+        <h5 class="h4">注册会员可见</h5>
+        <a class="btn btn-outline-theme py-1 px-8 js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;什么是股价趋势图？&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">立即注册</a>
+        <a class="text-theme mt-3 small" target="_blank" rel="noopener noreferrer nofollow" href="/companies/600519#notation">&gt;&gt;预览此功能&lt;&lt;</a>
+      </div>
+  </div>
+</div>
+
+
+      </div>
+        <div class="tab-pane fade px-2 px-sm-4 px-xl-7" id="coordinate" role="tabpanel" aria-labelledby="coordinate-tab">
+            <div class="blurred">
+  <img src="https://assets.caibaoshuo.com/images/blur/coordinate.png" />
+  <div class="blurred__content">
+    <div class="blurred__signup-tips">
+        <h5 class="h4">注册会员可见</h5>
+        <a class="btn btn-outline-theme py-1 px-8 js-login-required zhugeio-track-trigger-click" data-afid="cbsblurred" data-zhugeio-event="点击登录/注册按钮" data-zhugeio-prop="{&quot;所在页面&quot;:&quot;金禾实业(002597)财务分析&quot;,&quot;来源功能&quot;:&quot;什么是价值矩阵？&quot;,&quot;afid&quot;:&quot;cbsblurred&quot;}" href="javascript:void(0)">立即注册</a>
+        <a class="text-theme mt-3 small" target="_blank" rel="noopener noreferrer nofollow" href="/companies/600519#coordinate">&gt;&gt;预览此功能&lt;&lt;</a>
+      </div>
+  </div>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+  <input id="companySymbol" type="hidden" value="SZSE:002597">
+</div>
+
+
+
+        </div>
+      </div>
+      <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__main-section">
+      <div class="logo">
+        <svg width="146" height="48" viewBox="0 0 146 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M35.6188 12.9213C33.2703 12.9213 30.9483 13.0327 28.6541 13.2393C14.8564 20.341 4.348 32.8778 0 48C9.26972 31.3973 24.8663 18.7682 43.5532 13.3284C40.945 13.0603 38.2983 12.9213 35.6188 12.9213Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M39.1137 5.71605C36.8849 5.48703 34.6234 5.36826 32.3338 5.36826C30.327 5.36826 28.3429 5.46339 26.3824 5.63991C14.5926 11.7083 5.61316 22.4209 1.89813 35.3423C9.81905 21.1558 23.1459 10.3644 39.1137 5.71605Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M32.6511 0.274364C30.8921 0.093586 29.1068 0 27.2997 0C25.7158 0 24.15 0.0751788 22.6025 0.214298C13.2969 5.00404 6.2094 13.4593 3.27707 23.6583C9.52908 12.4609 20.048 3.9434 32.6511 0.274364Z" fill="#C1161E"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M74.5652 8.33362L70.6237 9.21621L70.4933 12.7539H62.3172V15.5084H66.3881C65.9089 22.4229 64.358 27.603 61.7355 31.0488V34.9591C66.7988 31.9218 69.6154 25.438 70.1858 15.5084H70.4933V36.0133H66.5595V38.7678H74.5652V15.5084H77.7469V12.7539H74.5652V8.33362Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M50.9929 12.414H58.0405V29.1738L61.1882 30.2325V9.66016H47.8452V30.2325L50.9929 29.1738V12.414Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M56.1248 24.5883V14.3521H52.9088V24.5883C53.0223 29.8243 50.9466 33.6896 46.6817 36.1837V39.142C50.3089 37.6458 52.9198 35.4692 54.5166 32.6129C56.1128 35.4011 58.6335 37.5773 62.0774 39.142V36.0474C57.8351 33.1911 55.8505 29.3711 56.1248 24.5883Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M129.338 22.7855H139.841V14.6246H129.338V22.7855ZM143.16 35.5714H139.739V25.5399H143.776V11.8701H141.005C141.416 10.805 141.734 9.63761 141.963 8.3674H137.994C137.811 9.43383 137.503 10.6005 137.071 11.8701H132.11C131.699 10.76 131.402 9.59165 131.22 8.3674H127.251C127.502 9.75074 127.81 10.9184 128.175 11.8701H125.404V25.5399H128.962V25.6762C129.168 30.4597 127.297 33.8712 123.351 35.9115V39.2097C129.897 37.2598 133.09 32.761 132.931 25.71V25.5399H135.805V38.3599H144.877L146 35.565L143.16 35.5714Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M125.472 33.1567V29.7906C123.921 30.6745 122.656 31.3093 121.675 31.6947V17.6507H114.935V20.4052H117.706V37.2374C120.557 36.1497 123.146 34.7892 125.472 33.1567Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M88.6606 15.7806H91.6708V12.992H88.6606V8.40167L84.6572 9.21612V12.992H80.9967V15.7806H84.6572V23.2613C83.4032 23.5114 82.1485 23.7377 80.8939 23.9418V27.2741C82.1712 27.0482 83.4259 26.7978 84.6572 26.5259V35.9791H81.6124V38.768H88.6606V25.472C89.3448 25.2907 90.2794 24.9847 91.4658 24.5541C91.5793 24.5084 91.6708 24.4743 91.7394 24.4518V21.4595C90.7133 21.7771 89.687 22.0715 88.6606 22.3434V15.7806Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M101.612 23.1833H107.235C106.801 25.8359 105.732 28.51 104.432 30.3687C103.338 28.9417 102.251 25.1561 101.612 23.1833ZM109.81 27.9585C110.531 25.895 110.83 23.7085 110.83 21.5239V20.9155H97.5189L97.5192 21.2423C97.5205 23.012 97.8112 24.7727 98.4198 26.4357C99.3637 29.0156 100.66 31.6794 101.866 33.1566C100.702 34.1321 99.3343 35.0047 97.7608 35.7751V39.1078C100.315 38.2239 102.517 37.0556 104.363 35.6054C106.165 37.0556 108.491 38.2239 111.343 39.1078V35.5035C109.724 34.755 108.298 33.9168 107.066 32.9872C108.237 31.5194 109.152 29.8432 109.81 27.9585Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M106.724 16.1886H101.593L102.68 18.8068H110.59V9.55798H92.8341V39.2098H96.8025V23.6013V20.9156V12.3462H106.724V16.1886Z" fill="#fff"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M122.85 12.7401C122.85 14.4972 121.417 15.9217 119.649 15.9217C117.881 15.9217 116.447 14.4972 116.447 12.7401C116.447 10.9826 117.881 9.55811 119.649 9.55811C121.417 9.55811 122.85 10.9826 122.85 12.7401Z" fill="#C1161E"/>
+</svg>
+
+        <div class="statement">
+          <h5 class="statement-title"><a class="text-muted zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;风险提示&quot;}" href="/risk">风险提示</a></h5>
+          <p class="statement-des">本站提供之数据资料、数据分析工具仅供参考，不构成任何投资建议或推荐，股市有风险，投资需谨慎。本站仅能提供历史数据并对数据及时性、正确性、更新延误等不负任何责任，依本站数据交易发生损失需自行负责。</p>
+        </div>
+      </div>
+      <div class="item item-link">
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;关于我们&quot;}" href="/about">关于我们</a>
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;商务合作&quot;}" href="/contact">商务合作</a>
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;在线客服&quot;}" href="/contact">在线客服</a>
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;新手指南&quot;}" href="/guides">新手指南</a>
+      </div>
+      <div class="item item-link">
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;常见问题&quot;}" href="/faq">常见问题</a>
+        <a class="main-link zhugeio-track-trigger-click" href="https://support.caibaoshuo.com" target="_blank" rel="noopener noreferrer nofollow" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop='{"导航名称":"帮助中心"}'>帮助中心</a>
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;VIP 会员&quot;}" href="/helps/plan_ability_table">VIP 会员</a>
+        <a class="main-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;App 下载&quot;}" href="/app">App 下载</a>
+      </div>
+      <div class="item item-qr">
+        <img class="qr-code" src="https://assets.caibaoshuo.com/assets/gongzhonghao_qrode-88eba951533e9ca45dc095fe5e7fddf11ca2a7f3a79e90ba5019dd91fb716f4d.png" />
+        <p class="mt-1 mb-0 small">微信公众号<br><strong>财报说学财报</strong></p>
+      </div>
+      <div class="item item-qr">
+        <img class="qr-code" src="https://assets.caibaoshuo.com/assets/app_qrcode-9536c42a79b12f29579893649b3599ae63b550ab768d02c6535c59d965f559bf.png" />
+        <p class="mt-1 mb-0 small">苹果/安卓 APP<br><strong>财报说</strong></p>
+      </div>
+    </div>
+    <div class="footer__bottom-section">
+      <span>©2018 - 2021 <a class="bottom-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;财报说&quot;}" href="/">财报说</a></span>
+      <a class="bottom-link zhugeio-track-trigger-click" data-zhugeio-event="点击底部导航栏" data-zhugeio-prop="{&quot;导航名称&quot;:&quot;用户服务协议&quot;}" href="/terms">用户服务协议</a>
+      <a class="bottom-link ipc-info" href="http://www.beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer nofollow">京ICP备 18040528号-1</a>
+      <a class="bottom-link ipc-info" href="http://www.beian.gov.cn/" target="_blank" rel="noopener noreferrer nofollow">京公网安备 11010802027329号</a>
+      <a class="bottom-link ipc-info" href="javascript:void(0)">增值电信业务经营许可证 京B2-20191532</a>
+    </div>
+  </div>
+</footer>
+
+      <div class="modal fade" data-root-url="https://h5.caibaoshuo.com/" id="wechat-login-modal"><div class="modal-dialog modal-md"><div class="modal-content"><div class="modal-header"><button class="close" data-dismiss="modal"></button></div><div class="modal-body"><div class="row"><div class="mx-auto" data-wxpub-auth-qrcode-html="&lt;img src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+AQAAAAA8Q0GdAAAEgElEQVR4nO1aTY6sPAx0HpFYhhtwlHAzxM2So3ADWCKB8qoqPW/NSD3qId/XajHpwQuM/8pl/yn3Pucfu/n5X/D3Cu4OH79P/OMmNxi+12DeeLWv/z9EmfuCEQ7MYygWUtns3KdeV76KwTrc3j79jD8gSFOadZtBO7+7riTewRso6cRhd/7zz/gzgmE5hgwFr1F2twz35tsI6fc8408Idlt0UFmBbPsMxU/LcIDf9IzvFIQnVzWpaUgI5GtcvMV+i/TtUM7PP+PbBTONa4jouVvnfp1gbhw6HIw5/MLt4dPP+HbBIBBi+RgToptmDeka8gFNFd0CKekhynxDEFkL/gyzQmU3JhgXMY7ixfcAT6hp7SnK3BSUsqcqF5y8bBmV6xgXUyqjlS03aOuw9GWBiX1Y4NgALYebkcSQ1mBlvIfTYou2no8hIq4vN5+sztkjk+/z5eAD8cLb2KcGsRlsXX27QMHZdOgKHCD1qwMuhUCDORxxjS/c2ymbDZk9iJuvITKNh0VAvbm4RtiOiYAkLELgkf4cgMAZ48pvdrUX10LaAOFlU9ZCgI+l27Knb0v33X38Gd8vCCQGHWlWhjCBN3qQATm8dKsDhsFLaLLnQvYuVDABnOAKHeHVUBmhTcVh7tBcXAuFwtYHUSggaNT/cY3I5PjJ2r03F9fwbaO+Rt1NDs9rLVg9z3ODtt4dbN2rj1b2ZqkSdRZhYlJn8vmHKHNbEFmLwLt4EmUzUBmaDuQ3dZqo1MhvuUFsZvRnJfByVMvurjabXu0Ycl2DOFxopMi4ntV56gp5JCBSFTKClha5FCYxNVlLKQUIjfwJu2wiVd3NfYuIVP11rJx/WScVbqu1u7beR4vdBzsOqQxDe4AxR2zGl6Cixvq1NhjXJMY2uvHh2FbjVyWE+y0LmqazvXot3/Z0Y7k0FFQ4o7u83MvbfXvYjOnLoUYzaxF+T9W3TSRSTWgNYjMzoBTg8LLOwqVZoz3Otvp1Rpg7Nx8N1msi7aLeCoYmM8xhLt2eTfc6aRrSoK3ZaIxkRGupKoKgKl7G0Q8nX83ZmkrNlTUC+CRzSGqULHGt4NasrZMTVWgVmFW4ovGHF7/UJG/WrQ627rfIPiuUk3MBIdKQGNcajjxEmduCVIoN9Sm6jGaluWNfGNHXWHqyak9R5huCSGVQnHspFisCF13G6R4OmnU2F9fcwMnVpT05tMxUxj2N2LP3ZNVukTdjdUZX5cUdwck7qMmmW5CMGFV08VOUuSkoehA2pbKAZBxlAp5FVi41I04jzococ1tQayfAZifZA5wj91Kc45JG+eJS2ovrulvIGQc6Tde/aGFta3B4TS6lwXr9tVsI40JZNiBqNv/NcE/1X09R5r6gqzV6XLRqFS+tJBGZa9j3mgU8RZnvCbLBPLhfR9ACOIrGs5QkXiX/lmd8vyBMzKVZkSewb5Z7A7Nlxnt7bGHdLdS2cOVLTTwDChYnIJpzNVivX7uF2Y3l0O6N5+AjVgJNizrW4F7Ka7cwViZB29GvMwf3G+3e4l7Kf1DwL3+h6HAfLbuHAAAAAElFTkSuQmCC&gt;" id="wechat-login-container"></div></div></div></div></div></div>
+      
+      
+      <div id="modal-window"></div>
+      <div class="modal referrals__modal fade" id="signinOrSignupModal" tabindex="-1" role="dialog" aria-labelledby="signinOrSignupModallLabel" aria-hidden="true">
+</div>
+
+      <input id="lastSmsSentAt" type="hidden" value="">
+    </div>
+
+    <script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script src="https://assets.caibaoshuo.com/assets/zhugeio_track-15f96abbe018ece2e90a69bc6e00170e58a2de8bd27f94423e228b97f70b062c.js"></script>
+    <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+    <input type="hidden" id="tencent_aid" value="" />
+    
+  <script>
+      $(".ratio-lists").tooltip({
+          delay: {
+              show: 0,
+              hide: 1000
+          }
+      });
+  </script>
+
+  <script>
+    var myChart = echarts.init(document.getElementById('cbs_radar_yearly_2016'));
+    var blurred = document.getElementById("cbs_radar_yearly_2016").dataset.blurred == "true"
+    option = {
+      tooltip: {
+        show: !blurred
+      },
+      // angleAxis: {   clockwise: true, },
+      radar: {
+        shape: 'circle',
+        name: {
+          textStyle: {
+            color: '#fff',
+            backgroundColor: '#aaa',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 13
+          }
+        },
+        splitNumber: 5,
+        splitArea: {
+          areaStyle: {
+            color: ['rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0.1)', 'rgba(114, 172, 209, 0.2)', 'rgba(114, 172, 209, 0.3)', 'rgba(114, 172, 209, 0.4)'],
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 10
+          }
+        },
+        indicator: [
+          {
+            name: '现金流',
+            max: 100
+          }, {
+            name: '偿债能力',
+            max: 100
+          }, {
+            name: '财务结构',
+            max: 100
+          }, {
+            name: '盈利能力',
+            max: 100
+          }, {
+            name: '营运能力',
+            max: 100
+          }
+        ]
+      },
+
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            normal: {
+              //color: '#e16260'
+          }},
+          itemStyle: {
+            width: 0,
+            normal: {
+              //color: '#e16260'
+          }},
+          lineStyle: {
+            normal: {
+              //color: '#e16260',
+              //width: 1.2
+            }
+          },
+          data: [
+            {
+              value: [60.0, 40.0, 80.0, 53.0, 60.0],
+              name: 'CBS总分 : [51~75]',
+              areaStyle: {
+                normal: {
+                  opacity: 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    };
+
+    myChart.setOption(option);
+  </script>
+
+  <script>
+    var myChart = echarts.init(document.getElementById('cbs_radar_yearly_2017'));
+    var blurred = document.getElementById("cbs_radar_yearly_2017").dataset.blurred == "true"
+    option = {
+      tooltip: {
+        show: !blurred
+      },
+      // angleAxis: {   clockwise: true, },
+      radar: {
+        shape: 'circle',
+        name: {
+          textStyle: {
+            color: '#fff',
+            backgroundColor: '#aaa',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 13
+          }
+        },
+        splitNumber: 5,
+        splitArea: {
+          areaStyle: {
+            color: ['rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0.1)', 'rgba(114, 172, 209, 0.2)', 'rgba(114, 172, 209, 0.3)', 'rgba(114, 172, 209, 0.4)'],
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 10
+          }
+        },
+        indicator: [
+          {
+            name: '现金流',
+            max: 100
+          }, {
+            name: '偿债能力',
+            max: 100
+          }, {
+            name: '财务结构',
+            max: 100
+          }, {
+            name: '盈利能力',
+            max: 100
+          }, {
+            name: '营运能力',
+            max: 100
+          }
+        ]
+      },
+
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            normal: {
+              //color: '#e16260'
+          }},
+          itemStyle: {
+            width: 0,
+            normal: {
+              //color: '#e16260'
+          }},
+          lineStyle: {
+            normal: {
+              //color: '#e16260',
+              //width: 1.2
+            }
+          },
+          data: [
+            {
+              value: [80.0, 60.0, 80.0, 68.0, 70.0],
+              name: 'CBS总分 : [75~100]',
+              areaStyle: {
+                normal: {
+                  opacity: 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    };
+
+    myChart.setOption(option);
+  </script>
+
+  <script>
+    var myChart = echarts.init(document.getElementById('cbs_radar_yearly_2018'));
+    var blurred = document.getElementById("cbs_radar_yearly_2018").dataset.blurred == "true"
+    option = {
+      tooltip: {
+        show: !blurred
+      },
+      // angleAxis: {   clockwise: true, },
+      radar: {
+        shape: 'circle',
+        name: {
+          textStyle: {
+            color: '#fff',
+            backgroundColor: '#aaa',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 13
+          }
+        },
+        splitNumber: 5,
+        splitArea: {
+          areaStyle: {
+            color: ['rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0.1)', 'rgba(114, 172, 209, 0.2)', 'rgba(114, 172, 209, 0.3)', 'rgba(114, 172, 209, 0.4)'],
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 10
+          }
+        },
+        indicator: [
+          {
+            name: '现金流',
+            max: 100
+          }, {
+            name: '偿债能力',
+            max: 100
+          }, {
+            name: '财务结构',
+            max: 100
+          }, {
+            name: '盈利能力',
+            max: 100
+          }, {
+            name: '营运能力',
+            max: 100
+          }
+        ]
+      },
+
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            normal: {
+              //color: '#e16260'
+          }},
+          itemStyle: {
+            width: 0,
+            normal: {
+              //color: '#e16260'
+          }},
+          lineStyle: {
+            normal: {
+              //color: '#e16260',
+              //width: 1.2
+            }
+          },
+          data: [
+            {
+              value: [65.0, 100.0, 80.0, 63.0, 65.0],
+              name: 'CBS总分 : [75~100]',
+              areaStyle: {
+                normal: {
+                  opacity: 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    };
+
+    myChart.setOption(option);
+  </script>
+
+  <script>
+    var myChart = echarts.init(document.getElementById('cbs_radar_yearly_2019'));
+    var blurred = document.getElementById("cbs_radar_yearly_2019").dataset.blurred == "true"
+    option = {
+      tooltip: {
+        show: !blurred
+      },
+      // angleAxis: {   clockwise: true, },
+      radar: {
+        shape: 'circle',
+        name: {
+          textStyle: {
+            color: '#fff',
+            backgroundColor: '#aaa',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 13
+          }
+        },
+        splitNumber: 5,
+        splitArea: {
+          areaStyle: {
+            color: ['rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0.1)', 'rgba(114, 172, 209, 0.2)', 'rgba(114, 172, 209, 0.3)', 'rgba(114, 172, 209, 0.4)'],
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 10
+          }
+        },
+        indicator: [
+          {
+            name: '现金流',
+            max: 100
+          }, {
+            name: '偿债能力',
+            max: 100
+          }, {
+            name: '财务结构',
+            max: 100
+          }, {
+            name: '盈利能力',
+            max: 100
+          }, {
+            name: '营运能力',
+            max: 100
+          }
+        ]
+      },
+
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            normal: {
+              //color: '#e16260'
+          }},
+          itemStyle: {
+            width: 0,
+            normal: {
+              //color: '#e16260'
+          }},
+          lineStyle: {
+            normal: {
+              //color: '#e16260',
+              //width: 1.2
+            }
+          },
+          data: [
+            {
+              value: [80.0, 100.0, 80.0, 58.0, 70.0],
+              name: 'CBS总分 : [75~100]',
+              areaStyle: {
+                normal: {
+                  opacity: 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    };
+
+    myChart.setOption(option);
+  </script>
+
+  <script>
+    var myChart = echarts.init(document.getElementById('cbs_radar_yearly_近12个月'));
+    var blurred = document.getElementById("cbs_radar_yearly_近12个月").dataset.blurred == "true"
+    option = {
+      tooltip: {
+        show: !blurred
+      },
+      // angleAxis: {   clockwise: true, },
+      radar: {
+        shape: 'circle',
+        name: {
+          textStyle: {
+            color: '#fff',
+            backgroundColor: '#aaa',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 13
+          }
+        },
+        splitNumber: 5,
+        splitArea: {
+          areaStyle: {
+            color: ['rgba(114, 172, 209, 0)', 'rgba(114, 172, 209, 0.1)', 'rgba(114, 172, 209, 0.2)', 'rgba(114, 172, 209, 0.3)', 'rgba(114, 172, 209, 0.4)'],
+            shadowColor: 'rgba(0, 0, 0, 0.3)',
+            shadowBlur: 10
+          }
+        },
+        indicator: [
+          {
+            name: '现金流',
+            max: 100
+          }, {
+            name: '偿债能力',
+            max: 100
+          }, {
+            name: '财务结构',
+            max: 100
+          }, {
+            name: '盈利能力',
+            max: 100
+          }, {
+            name: '营运能力',
+            max: 100
+          }
+        ]
+      },
+
+      series: [
+        {
+          type: 'radar',
+          areaStyle: {
+            normal: {
+              //color: '#e16260'
+          }},
+          itemStyle: {
+            width: 0,
+            normal: {
+              //color: '#e16260'
+          }},
+          lineStyle: {
+            normal: {
+              //color: '#e16260',
+              //width: 1.2
+            }
+          },
+          data: [
+            {
+              value: [75.0, 100.0, 60.0, 51.0, 65.0],
+              name: 'CBS总分 : [75~100]',
+              areaStyle: {
+                normal: {
+                  opacity: 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+
+    };
+
+    myChart.setOption(option);
+  </script>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?09f1f334db9a482bdf5fa1cb58cc9bf5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+      document.addEventListener('turbolinks:load', function(event) {
+        _hmt.push(['_trackPageview', location.pathname + location.search]);
+      });
+    })();
+    </script>
+
+    <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+</body></html>
